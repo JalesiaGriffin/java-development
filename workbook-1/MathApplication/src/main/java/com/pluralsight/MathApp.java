@@ -33,8 +33,10 @@ public class MathApp {
                 System.out.println("The square root is " + squareRoot);
 
         //Question 5: Find and display the distance between the points (5,10) and (85,50)
+            //Variables
+                int x1 = 5, y1 = 10, x2 = 85, y2 = 50;
             //Solution
-                double distance = Math.hypot(5-85, 10-50); //Math.sqrt((y2 - y1) * (y2 - y1) + (x2 - x1) * (x2 - x1))
+                double distance = Math.sqrt(Math.pow(x2 - x1, 2) + Math.pow(y2 - y1, 2));
                 System.out.println("The distance is " + distance);
 
         //Question 6: Find and display the absolute (positive) value of a variable after it is set to -3.8
