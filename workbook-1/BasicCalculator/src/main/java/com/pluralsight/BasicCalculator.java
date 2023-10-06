@@ -11,21 +11,21 @@ public class BasicCalculator {
             Scanner scan = new Scanner(System.in);
 
         //Prompt
-        System.out.print("Enter the first number: ");
-        num1 = scan.nextFloat();
-        scan.nextLine();
+            System.out.print("Enter the first number: ");
+            num1 = scan.nextFloat();
+            scan.nextLine();
 
-        System.out.print("Enter the second number: ");
-        num2 = scan.nextFloat();
-        scan.nextLine();
+            System.out.print("Enter the second number: ");
+            num2 = scan.nextFloat();
+            scan.nextLine();
 
-        System.out.println("Possible calculations:");
-        System.out.print("\t(A)dd\n" +
-                "\t(S)ubtract\n" +
-                "\t(M)ultiply\n" +
-                "\t(D)ivide\n" +
-                "Please select an option: ");
-        operation = scan.nextLine();
+            System.out.println("Possible calculations:");
+            System.out.print("\t(A)dd\n" +
+                             "\t(S)ubtract\n" +
+                             "\t(M)ultiply\n" +
+                             "\t(D)ivide\n" +
+                             "Please select an option: ");
+            operation = scan.nextLine();
 
         //Conditions
             if (operation.equals("A")) {
