@@ -35,12 +35,14 @@ public class BasicCalculator {
                 System.out.println(num1 + " - " + num2 + " = " + (num1 - num2)); //subtraction
             }
             else if (operation.equals("M")) {
-                System.out.println(num1 + " * " + num2 + " = " + (num1 * num2));
+                System.out.println(num1 + " * " + num2 + " = " + (num1 * num2)); //multiplication
             }
             else if (operation.equals("D")) {
-                System.out.println(num1 + " / " + num2 + " = " + (num1 / num2));
+                System.out.println(num1 + " / " + num2 + " = " + (num1 / num2)); //division
             }
             else
                 System.out.println("Invalid response."); //invalidation
+
+        scan.close();
     }
 }
