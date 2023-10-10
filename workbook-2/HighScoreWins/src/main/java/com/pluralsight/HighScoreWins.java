@@ -31,6 +31,5 @@ public class HighScoreWins {
             System.out.println("Winner: " + home);
         } else System.out.println("Winner: " + visitor);
 
-
     }
 }
