@@ -13,26 +13,25 @@ public class FinancialCalculators {
     public static void mortgageCalculator(Scanner scan) {
         //Prompt for mortgage details
         System.out.print("What is your principal amount? ");
-        int principal = scan.nextInt();
+        double principal = scan.nextInt();
         scan.nextLine();
 
         System.out.print("What is your interest rate? ");
         double interestRate = scan.nextDouble();
-        interestRate = interestRate * 0.01;
         scan.nextLine();
+        interestRate = (interestRate * 0.01) / 12;
 
         System.out.print("What is your loan length (in months)? ");
         int loanLength = scan.nextInt();
         scan.nextLine();
 
         //Calculations
-        //double monthlyPayment = (principal * interestRate * ((1 + interestRate)^months)) / (((1 + interestRate)^months) - 1);
         double monthlyPayment = (principal * interestRate * Math.pow((1 + interestRate), loanLength) /
-                Math.pow((1 + interestRate), loanLength) - 1);
+                                 Math.pow((1 + interestRate), loanLength) + 1);
         double totalInterest = (monthlyPayment * loanLength) - principal;
 
-        System.out.println("A $" + principal + " loan at " + String.format("%.3f", (interestRate/0.01)) + "% interest for " +
-                          loanLength/12 + " years would have a $" + String.format("%.2f",monthlyPayment) +
+        System.out.println("A $" + principal + " loan at " + String.format("%.3f", ((interestRate/0.01) * 12)) + "% interest for " +
+                          loanLength/12 + " years would have a $" + String.format("%.2f", monthlyPayment) +
                           "/mo payment with a total interest of $" + String.format("%.2f", totalInterest));
     }
 
@@ -98,6 +97,7 @@ public class FinancialCalculators {
         System.out.println("\t(1) Mortgage Calculator");
         System.out.println("\t(2) Future Value");
         System.out.println("\t(3) Present Value");
+        System.out.print("Choose a calculator: ");
         int selection = scan.nextInt();
         scan.nextLine();
 
