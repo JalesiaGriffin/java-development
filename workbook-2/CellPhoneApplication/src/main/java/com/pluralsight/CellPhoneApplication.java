@@ -4,6 +4,7 @@ import java.util.Scanner;
 
 public class CellPhoneApplication {
     public static void main(String[] args) {
+        // Objects
         Scanner scan = new Scanner(System.in);
         CellPhone myPhone = new CellPhone();
 
