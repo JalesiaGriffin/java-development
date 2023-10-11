@@ -13,8 +13,7 @@ public class AddressBuilder {
         System.out.print("Full name: ");
         address.append(scan.nextLine() + "\n\n");
 
-        address.append("Billing Address:\n");
-
+        address.append("Billing Address:\n");   //billing address section
         System.out.print("Billing Street: ");
         address.append(scan.nextLine() + "\n");
 
@@ -27,7 +26,7 @@ public class AddressBuilder {
         System.out.print("Billing Zip: ");
         address.append(scan.nextLine());
 
-        address.append("\n\nShipping Address:\n");
+        address.append("\n\nShipping Address:\n"); //shipping address section
         System.out.print("\nShipping Street: ");
         address.append(scan.nextLine() + "\n");
 
