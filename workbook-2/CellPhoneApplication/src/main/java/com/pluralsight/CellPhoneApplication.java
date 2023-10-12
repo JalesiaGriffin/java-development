@@ -11,10 +11,11 @@ public class CellPhoneApplication {
 
         getPhoneProperties(scan, cellPhone1);
         display(cellPhone1);
-        cellPhone1.dial(cellPhone1.getPhoneNum());
-
+        
         getPhoneProperties(scan, cellPhone2);
         display(cellPhone2);
+
+        cellPhone1.dial(cellPhone2.getPhoneNum());
         cellPhone2.dial(cellPhone1.getPhoneNum());
     }
     public static void getPhoneProperties (Scanner scan, CellPhone phone) {
