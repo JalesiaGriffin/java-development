@@ -6,8 +6,18 @@ public class CellPhoneApplication {
     public static void main(String[] args) {
         // Objects
         Scanner scan = new Scanner(System.in);
-        CellPhone myPhone = new CellPhone();
+        CellPhone cellPhone1 = new CellPhone();
+        CellPhone cellPhone2 = new CellPhone();
 
+        retrievePhoneProperties(scan, cellPhone1);
+        display(cellPhone1);
+        cellPhone1.dial(cellPhone1.getPhoneNum());
+
+        retrievePhoneProperties(scan, cellPhone2);
+        display(cellPhone2);
+        cellPhone2.dial(cellPhone1.getPhoneNum());
+    }
+    public static void retrievePhoneProperties (Scanner scan, CellPhone phone) {
         // Prompts
         System.out.print("What is the serial number? ");
         int serial = scan.nextInt();
@@ -26,17 +36,18 @@ public class CellPhoneApplication {
         String owner = scan.nextLine();
 
         // Set values
-        myPhone.setSerialNum(serial);
-        myPhone.setModel(model);
-        myPhone.setCarrier(carrier);
-        myPhone.setPhoneNum(phoneNum);
-        myPhone.setOwner(owner);
-
+        phone.setSerialNum(serial);
+        phone.setModel(model);
+        phone.setCarrier(carrier);
+        phone.setPhoneNum(phoneNum);
+        phone.setOwner(owner);
+    }
+    public static void display(CellPhone phone) {
         // Print values
-        System.out.println("\nSerial Number: " + myPhone.getSerialNum());
-        System.out.println("Model: " + myPhone.getModel());
-        System.out.println("Carrier: " + myPhone.getCarrier());
-        System.out.println("Phone Number: " + myPhone.getPhoneNum());
-        System.out.println("Owner: " + myPhone.getOwner());
+        System.out.println("\nSerial Number: " + phone.getSerialNum());
+        System.out.println("Model: " + phone.getModel());
+        System.out.println("Carrier: " + phone.getCarrier());
+        System.out.println("Phone Number: " + phone.getPhoneNum());
+        System.out.println("Owner: " + phone.getOwner());
     }
 }
