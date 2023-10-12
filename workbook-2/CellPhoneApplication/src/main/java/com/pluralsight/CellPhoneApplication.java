@@ -9,15 +9,15 @@ public class CellPhoneApplication {
         CellPhone cellPhone1 = new CellPhone();
         CellPhone cellPhone2 = new CellPhone();
 
-        retrievePhoneProperties(scan, cellPhone1);
+        getPhoneProperties(scan, cellPhone1);
         display(cellPhone1);
         cellPhone1.dial(cellPhone1.getPhoneNum());
 
-        retrievePhoneProperties(scan, cellPhone2);
+        getPhoneProperties(scan, cellPhone2);
         display(cellPhone2);
         cellPhone2.dial(cellPhone1.getPhoneNum());
     }
-    public static void retrievePhoneProperties (Scanner scan, CellPhone phone) {
+    public static void getPhoneProperties (Scanner scan, CellPhone phone) {
         // Prompts
         System.out.print("What is the serial number? ");
         int serial = scan.nextInt();
