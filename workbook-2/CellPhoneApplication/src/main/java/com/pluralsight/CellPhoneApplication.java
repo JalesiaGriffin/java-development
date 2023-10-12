@@ -8,15 +8,20 @@ public class CellPhoneApplication {
         Scanner scan = new Scanner(System.in);
         CellPhone cellPhone1 = new CellPhone();
         CellPhone cellPhone2 = new CellPhone();
+        CellPhone myPhone = new CellPhone(123456, "iPhone 11", "AT&T", "000-111-2222","Jalesia Griffin" );
 
+        // Calling the methods
         getPhoneProperties(scan, cellPhone1);
         display(cellPhone1);
-        
+
         getPhoneProperties(scan, cellPhone2);
         display(cellPhone2);
 
         cellPhone1.dial(cellPhone2.getPhoneNum());
         cellPhone2.dial(cellPhone1.getPhoneNum());
+
+        myPhone.dial(cellPhone2.getPhoneNum());
+        myPhone.dial(cellPhone1);
     }
     public static void getPhoneProperties (Scanner scan, CellPhone phone) {
         // Prompts
