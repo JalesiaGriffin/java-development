@@ -1,8 +1,6 @@
 package com.pluralsight;
 
-import java.time.LocalDate;
 import java.time.LocalDateTime;
-import java.time.LocalTime;
 
 public class Employee {
     private int employeeId;
@@ -41,6 +39,48 @@ public class Employee {
         return hoursWorked;
     }
 
+    public void punchIn(double time) {
+        startTime = time;
+    }
+
+    public void punchOut(double time) {
+        double duration = time - startTime;
+        hoursWorked += duration;
+        startTime = 0;
+    }
+
+    public void punchIn() {
+        LocalDateTime now = LocalDateTime.now();
+        int hour = now.getHour();
+        int minute = now.getMinute();
+        double time = hour + (minute / 60.0);
+        startTime = time;
+    }
+
+    public double getStartTime() {
+        return startTime;
+    }
+
+    public void punchOut() {
+        LocalDateTime now = LocalDateTime.now();
+        int hour = now.getHour();
+        int minute = now.getMinute();
+        double time = hour + (minute / 60.0);
+        double duration = time - startTime;
+        hoursWorked += duration;
+        startTime = 0;
+    }
+
+    public void punchTimeCard(double time) {
+        if (startTime == 0) {
+            startTime = time;
+        } else {
+            double duration = time - startTime;
+            hoursWorked += duration;
+            startTime = 0;
+        }
+    }
+
     public double getTotalPay() {
         if (hoursWorked <= 40) {
             return hoursWorked * payRate;
@@ -62,37 +102,6 @@ public class Employee {
             return hoursWorked - 40;
         } else {
             return 0;
-        }
-    }
-
-    public double punchIn(double time) {
-        return startTime = time;
-    }
-    public double punchIn() {
-        LocalDateTime dt = LocalDateTime.now();
-        return startTime = dt.getHour();
-    }
-
-    public void punchOut(double time) {
-        double duration = time - startTime;
-        hoursWorked += duration;
-        startTime = 0;
-    }
-
-    public void punchOut() {
-        LocalDateTime dt = LocalDateTime.now();
-        double duration = dt.getHour() - startTime;
-        hoursWorked += duration;
-        startTime = 0;
-    }
-
-    public void punchTimeCard(double time) {
-        if (startTime == 0) {
-            startTime = time;
-        } else {
-            double duration = time - startTime;
-            hoursWorked += duration;
-            startTime = 0;
         }
     }
 }

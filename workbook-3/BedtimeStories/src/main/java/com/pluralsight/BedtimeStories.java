@@ -25,7 +25,7 @@ public class BedtimeStories {
             while(file.hasNextLine()) {
                 input = file.nextLine();
                 System.out.println(lineCount + ". " + input);
-                lineCount++;
+                lineCount++; //prints line number
             }
 
             // Close scanners
@@ -35,7 +35,5 @@ public class BedtimeStories {
         } catch (IOException ex) {
             ex.printStackTrace();
         }
-
-
     }
 }
