@@ -10,11 +10,17 @@ public class FinanceApplication {
 
         // try to deposit money into both accounts
         account1.deposit(100);
-        BankAccount account21 = (BankAccount) account2;
 
+        BankAccount account21 = (BankAccount) account2;
         account21.deposit(100);
 
-        System.out.println(account1.getValue());
-        System.out.println(account21.getValue());
+        // add assets to portfolio
+        Portfolio portfolio = new Portfolio("My Assets","Gary");
+        portfolio.add(new House("condo",4000, 2019, 3500, 6));
+        portfolio.add(new Gold("my gold", 5000, 600));
+        portfolio.add(new Jewelry("Ruby", 17000, 60));
+        portfolio.add(new CreditCard("company", "12345", 17956));
+
+        System.out.println(portfolio.getLeastValuable());
     }
 }

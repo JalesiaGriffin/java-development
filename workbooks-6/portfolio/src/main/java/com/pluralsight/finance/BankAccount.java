@@ -23,4 +23,13 @@ public class BankAccount implements IValuable{
     public double getValue() {
         return balance;
     }
+
+    @Override
+    public String toString() {
+        return "BankAccount{" +
+                "name='" + name + '\'' +
+                ", accountNumber='" + accountNumber + '\'' +
+                ", balance=" + balance +
+                '}';
+    }
 }

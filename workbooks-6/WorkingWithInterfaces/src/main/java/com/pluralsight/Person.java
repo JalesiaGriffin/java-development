@@ -1,9 +1,9 @@
 package com.pluralsight;
 
 public class Person implements Comparable<Person>{
-    private String firstName;
-    private String lastName;
-    private int age;
+    private final String firstName;
+    private final String lastName;
+    private final int age;
 
     public Person(String firstName, String lastName, int age) {
         this.firstName = firstName;

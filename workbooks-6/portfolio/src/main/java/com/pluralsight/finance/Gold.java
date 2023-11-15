@@ -12,4 +12,11 @@ public class Gold extends FixedAsset{
     public double getValue() {
         return super.getValue() * 20;
     }
+
+    @Override
+    public String toString() {
+        return "Gold{" +
+                "weight=" + weight +
+                '}';
+    }
 }
