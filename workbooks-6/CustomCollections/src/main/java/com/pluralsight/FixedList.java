@@ -19,6 +19,9 @@ public class FixedList<T> {
         if (items.size() < maxSize){
             items.add(item);
         }
+        else {
+            throw new IllegalStateException();
+        }
     }
 
     public List<T> getItems(){
