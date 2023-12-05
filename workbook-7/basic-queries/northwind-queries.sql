@@ -7,29 +7,28 @@ FROM products;
 
 -- Question 3
 SELECT ProductID, ProductName, UnitPrice
-FROM products
+FROM northwind.products
 ORDER BY UnitPrice;
 
 -- Question 4
 SELECT ProductName, UnitPrice
-FROM products
-WHERE UnitPrice BETWEEN 7.5 AND 0;
+FROM northwind.products
+WHERE UnitPrice <= 7.50;
 
 -- Question 5
-SELECT ProductName, UnitsInStock, UnitPrice
-FROM products
+SELECT * FROM northwind.products
 WHERE UnitsInStock >= 100
 ORDER BY UnitPrice DESC;
 
 -- Question 6
 SELECT ProductName, UnitsInStock, UnitPrice
-FROM products
+FROM northwind.products
 WHERE UnitsInStock >= 100
 ORDER BY UnitPrice, ProductName;
 
 -- Question 7
 SELECT ProductName, UnitsInStock, UnitPrice
-FROM products
+FROM northwind.products
 WHERE UnitsInStock = 0 AND UnitsOnOrder <= 1
 ORDER BY ProductName;
 
@@ -37,36 +36,36 @@ ORDER BY ProductName;
 -- categories
 
 -- Question 9
-SELECT * FROM categories;
+SELECT * FROM northwind.categories;
 -- 8
 
 -- Question 10
 SELECT ProductName, CategoryID
-FROM products
+FROM northwind.products
 WHERE CategoryID = 8;
 
 -- Question 11
 SELECT FirstName, LastName
-FROM employees;
+FROM northwind.employees;
 
 -- Question 12
 SELECT FirstName, LastName, Title
-FROM employees
+FROM northwind.employees
 WHERE Title LIKE "%Manager%";
 
 -- Question 13
-SELECT DISTINCT Title
-FROM employees;
+SELECT DISTINCT(Title)
+FROM northwind.employees;
 
 -- Question 14
 SELECT FirstName, LastName, Salary
-FROM employees
+FROM northwind.employees
 WHERE Salary BETWEEN 2000 AND 2500;
 
 -- Question 15
-SELECT * FROM suppliers;
+SELECT * FROM northwind.suppliers;
 
 -- Question 16
 SELECT ProductName, SupplierID
-FROM products
+FROM northwind.products
 WHERE SupplierID = 4;
