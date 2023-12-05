@@ -3,7 +3,7 @@
 
 -- Question 2
 SELECT ProductID, ProductName, UnitPrice
-FROM products;
+FROM northwind.products;
 
 -- Question 3
 SELECT ProductID, ProductName, UnitPrice
